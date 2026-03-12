@@ -1,0 +1,19 @@
+[package]
+name = "bluresp32"
+version = "0.1.0"
+edition = "2021"
+description = "ESP32-S3 BLE receipt dongle firmware — USB Printer Class input, BLE GATT output"
+
+[dependencies]
+esp-idf-sys = { version = "0.35", features = ["binstart"] }
+esp-idf-svc = "0.49"
+esp-idf-hal = "0.44"
+heapless = "0.8"
+log = "0.4"
+
+[build-dependencies]
+embuild = "0.32"
+
+[profile.release]
+opt-level = "s"
+lto = true
